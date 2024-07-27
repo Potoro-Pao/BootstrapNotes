@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 最外層就是root或html */
+        :root {
+            font-size: 10px;
+        }
+
+        body {
+            font-size: 50px;
+        }
+
+        .em2 {
+            /* em是採用複層所以會受到body影響 */
+            font-size: 2em;
+        }
+
+        .rem2 {
+            /* font-size的兩倍 */
+            padding-top: 2rem;
+            padding-bottom: 1rem;
+            /* rem會採用root或html */
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- rem是屬於尺寸單位 -->
+    <!-- em代表2被文字大小 預設font-size的字體是16px+em會變成32px -->
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum at officiis molestias quibusdam sequi. Veritatis,
+        magni officia. Obcaecati adipisci quidem sit voluptates praesentium, ipsa iusto. Labore nihil odio pariatur rem.
+    </div>
+    <div class="em2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae suscipit saepe quod molestiae
+        delectus? At, sapiente porro doloribus iste fuga animi! Illo distinctio cumque, ipsam commodi quo modi id ipsa!
+        <div class="em2">sapiente porro</div>
+        <!-- em會繼承，會看外層文字大小，重新做計算 -->
+    </div>
+    <hr>
+    <div class="rem2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia vitae, tempora dignissimos numquam
+        magni alias ad vel. Consequatur distinctio accusamus, aliquam optio tempora asperiores expedita consequuntur
+        labore dignissimos, vel impedit.
+        <!-- rem只會受到最外層的影響 -->
+        <div class="rem2">sapiente porro</div>
+    </div>
+</body>
+
+</html>
